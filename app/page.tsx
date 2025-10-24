@@ -1,24 +1,33 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { QrCode, Shield, BarChart3, Package } from "lucide-react"
+import { QrCode, Shield, BarChart3, Package, Leaf, Apple, Wheat, Coffee, Fish, Pizza, Beef, Carrot } from "lucide-react"
 
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="border-b border-border bg-card">
+      <header className="sticky top-0 z-50 border-b border-border/40 bg-background/80 backdrop-blur-sm">
         <div className="container mx-auto flex items-center justify-between px-4 py-4">
-          <div className="flex items-center gap-2">
-            <Package className="h-8 w-8 text-primary" />
-            <span className="text-2xl font-bold text-foreground">TraceFood</span>
-          </div>
+          <Link href="/" className="flex items-center gap-2 transition-opacity hover:opacity-80">
+            <div className="relative">
+              <Package className="h-8 w-8 text-primary animate-pulse" />
+              <div className="absolute inset-0 bg-primary/20 blur-xl -z-10"></div>
+            </div>
+            <span className="text-2xl font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
+              TraceFood
+            </span>
+          </Link>
           <nav className="flex items-center gap-4">
             <Link href="/login">
-              <Button variant="ghost">Login</Button>
+              <Button variant="ghost" className="hover:opacity-80 transition-opacity">
+                Login
+              </Button>
             </Link>
             <Link href="/signup">
-              <Button>Get Started</Button>
+              <Button className="bg-primary transition-opacity hover:opacity-90">
+                <span className="relative z-10">Get Started</span>
+              </Button>
             </Link>
           </nav>
         </div>
@@ -26,6 +35,33 @@ export default function HomePage() {
 
       {/* Hero Section */}
       <section className="relative overflow-hidden">
+        {/* Floating Icons */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -left-4 top-32">
+            <Leaf className="h-16 w-16 text-primary/40 animate-float delay-1" />
+          </div>
+          <div className="absolute left-1/4 top-16">
+            <Apple className="h-12 w-12 text-primary/40 animate-float-reverse delay-2" />
+          </div>
+          <div className="absolute left-1/3 top-48">
+            <Wheat className="h-14 w-14 text-primary/40 animate-float delay-3" />
+          </div>
+          <div className="absolute right-1/4 top-24">
+            <Coffee className="h-12 w-12 text-primary/40 animate-float-reverse delay-4" />
+          </div>
+          <div className="absolute -right-4 top-40">
+            <Fish className="h-16 w-16 text-primary/40 animate-float delay-2" />
+          </div>
+          <div className="absolute left-1/5 bottom-32">
+            <Pizza className="h-14 w-14 text-primary/40 animate-float-reverse delay-1" />
+          </div>
+          <div className="absolute right-1/3 bottom-48">
+            <Beef className="h-12 w-12 text-primary/40 animate-float delay-4" />
+          </div>
+          <div className="absolute right-1/5 bottom-24">
+            <Carrot className="h-14 w-14 text-primary/40 animate-float-reverse delay-3" />
+          </div>
+        </div>
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background to-secondary/30"></div>
           <div className="absolute inset-0 opacity-60 mix-blend-soft-light bg-[radial-gradient(circle_at_30%_20%,rgba(var(--primary-rgb),0.4),transparent_50%),radial-gradient(circle_at_70%_60%,rgba(var(--primary-rgb),0.3),transparent_50%)]"></div>
@@ -62,6 +98,21 @@ export default function HomePage() {
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/50 to-background"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_0%_0%,rgba(var(--primary-rgb),0.1),transparent_40%)]"></div>
+        {/* Floating Icons */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute left-10 top-1/4">
+            <Wheat className="h-14 w-14 text-primary/30 animate-float delay-2" />
+          </div>
+          <div className="absolute right-10 top-1/3">
+            <Coffee className="h-16 w-16 text-primary/30 animate-float-reverse delay-3" />
+          </div>
+          <div className="absolute left-1/4 bottom-1/4">
+            <Apple className="h-12 w-12 text-primary/30 animate-float delay-4" />
+          </div>
+          <div className="absolute right-1/4 bottom-1/3">
+            <Leaf className="h-14 w-14 text-primary/30 animate-float-reverse delay-1" />
+          </div>
+        </div>
         <div className="container relative mx-auto px-4">
           <h2 className="mb-12 text-center text-3xl font-bold text-balance text-foreground lg:text-4xl">
             Everything You Need for Food Traceability
@@ -122,6 +173,21 @@ export default function HomePage() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_100%_100%,rgba(var(--primary-rgb),0.1),transparent_40%)]"></div>
+        {/* Floating Icons */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute left-20 top-20">
+            <Fish className="h-16 w-16 text-primary/30 animate-float delay-3" />
+          </div>
+          <div className="absolute right-20 top-32">
+            <Carrot className="h-14 w-14 text-primary/30 animate-float-reverse delay-2" />
+          </div>
+          <div className="absolute left-1/3 bottom-20">
+            <Pizza className="h-12 w-12 text-primary/30 animate-float delay-1" />
+          </div>
+          <div className="absolute right-1/3 bottom-32">
+            <Beef className="h-14 w-14 text-primary/30 animate-float-reverse delay-4" />
+          </div>
+        </div>
         <div className="container relative mx-auto px-4 py-32 text-center">
           <div className="relative">
             <div className="absolute left-1/2 top-0 h-48 w-48 -translate-x-1/2 rounded-full bg-primary/5 blur-3xl"></div>
