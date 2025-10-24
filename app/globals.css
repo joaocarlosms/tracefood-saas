@@ -13,6 +13,7 @@
   --popover-foreground: oklch(0.15 0 0);
   --primary: oklch(0.55 0.15 145);
   --primary-foreground: oklch(0.99 0 0);
+  --primary-rgb: 34, 197, 94; /* RGB values for primary color */
   --secondary: oklch(0.96 0.01 145);
   --secondary-foreground: oklch(0.15 0 0);
   --muted: oklch(0.96 0.01 145);
