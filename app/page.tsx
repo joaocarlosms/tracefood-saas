@@ -3,6 +3,15 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { QrCode, Shield, BarChart3, Package, Leaf, Apple, Wheat, Coffee, Fish, Pizza, Beef, Carrot } from "lucide-react"
 
+const Icon3D = ({ children, className = "", delay = "" }: { children: React.ReactNode; className?: string; delay?: string }) => (
+  <div className={`relative group ${className}`}>
+    <div className="absolute inset-0 bg-gradient-to-b from-primary/20 via-primary/10 to-transparent rounded-full blur-xl transform group-hover:scale-110 transition-all duration-300"></div>
+    <div className="relative transform group-hover:scale-105 group-hover:-translate-y-1 transition-all duration-300">
+      {children}
+    </div>
+  </div>
+)
+
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-background">
@@ -38,28 +47,44 @@ export default function HomePage() {
         {/* Floating Icons */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -left-4 top-32">
-            <Leaf className="h-16 w-16 text-primary/40 animate-float delay-1" />
+            <Icon3D delay="delay-1">
+              <Leaf className="h-16 w-16 text-primary animate-float" />
+            </Icon3D>
           </div>
           <div className="absolute left-1/4 top-16">
-            <Apple className="h-12 w-12 text-primary/40 animate-float-reverse delay-2" />
+            <Icon3D delay="delay-2">
+              <Apple className="h-12 w-12 text-primary animate-float-reverse" />
+            </Icon3D>
           </div>
           <div className="absolute left-1/3 top-48">
-            <Wheat className="h-14 w-14 text-primary/40 animate-float delay-3" />
+            <Icon3D delay="delay-3">
+              <Wheat className="h-14 w-14 text-primary animate-float" />
+            </Icon3D>
           </div>
           <div className="absolute right-1/4 top-24">
-            <Coffee className="h-12 w-12 text-primary/40 animate-float-reverse delay-4" />
+            <Icon3D delay="delay-4">
+              <Coffee className="h-12 w-12 text-primary animate-float-reverse" />
+            </Icon3D>
           </div>
           <div className="absolute -right-4 top-40">
-            <Fish className="h-16 w-16 text-primary/40 animate-float delay-2" />
+            <Icon3D delay="delay-2">
+              <Fish className="h-16 w-16 text-primary animate-float" />
+            </Icon3D>
           </div>
           <div className="absolute left-1/5 bottom-32">
-            <Pizza className="h-14 w-14 text-primary/40 animate-float-reverse delay-1" />
+            <Icon3D delay="delay-1">
+              <Pizza className="h-14 w-14 text-primary animate-float-reverse" />
+            </Icon3D>
           </div>
           <div className="absolute right-1/3 bottom-48">
-            <Beef className="h-12 w-12 text-primary/40 animate-float delay-4" />
+            <Icon3D delay="delay-4">
+              <Beef className="h-12 w-12 text-primary animate-float" />
+            </Icon3D>
           </div>
           <div className="absolute right-1/5 bottom-24">
-            <Carrot className="h-14 w-14 text-primary/40 animate-float-reverse delay-3" />
+            <Icon3D delay="delay-3">
+              <Carrot className="h-14 w-14 text-primary animate-float-reverse" />
+            </Icon3D>
           </div>
         </div>
         <div className="absolute inset-0">
@@ -101,16 +126,24 @@ export default function HomePage() {
         {/* Floating Icons */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute left-10 top-1/4">
-            <Wheat className="h-14 w-14 text-primary/30 animate-float delay-2" />
+            <Icon3D>
+              <Wheat className="h-14 w-14 text-primary animate-float" />
+            </Icon3D>
           </div>
           <div className="absolute right-10 top-1/3">
-            <Coffee className="h-16 w-16 text-primary/30 animate-float-reverse delay-3" />
+            <Icon3D>
+              <Coffee className="h-16 w-16 text-primary animate-float-reverse" />
+            </Icon3D>
           </div>
           <div className="absolute left-1/4 bottom-1/4">
-            <Apple className="h-12 w-12 text-primary/30 animate-float delay-4" />
+            <Icon3D>
+              <Apple className="h-12 w-12 text-primary animate-float" />
+            </Icon3D>
           </div>
           <div className="absolute right-1/4 bottom-1/3">
-            <Leaf className="h-14 w-14 text-primary/30 animate-float-reverse delay-1" />
+            <Icon3D>
+              <Leaf className="h-14 w-14 text-primary animate-float-reverse" />
+            </Icon3D>
           </div>
         </div>
         <div className="container relative mx-auto px-4">
@@ -176,16 +209,24 @@ export default function HomePage() {
         {/* Floating Icons */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute left-20 top-20">
-            <Fish className="h-16 w-16 text-primary/30 animate-float delay-3" />
+            <Icon3D>
+              <Fish className="h-16 w-16 text-primary animate-float" />
+            </Icon3D>
           </div>
           <div className="absolute right-20 top-32">
-            <Carrot className="h-14 w-14 text-primary/30 animate-float-reverse delay-2" />
+            <Icon3D>
+              <Carrot className="h-14 w-14 text-primary animate-float-reverse" />
+            </Icon3D>
           </div>
           <div className="absolute left-1/3 bottom-20">
-            <Pizza className="h-12 w-12 text-primary/30 animate-float delay-1" />
+            <Icon3D>
+              <Pizza className="h-12 w-12 text-primary animate-float" />
+            </Icon3D>
           </div>
           <div className="absolute right-1/3 bottom-32">
-            <Beef className="h-14 w-14 text-primary/30 animate-float-reverse delay-4" />
+            <Icon3D>
+              <Beef className="h-14 w-14 text-primary animate-float-reverse" />
+            </Icon3D>
           </div>
         </div>
         <div className="container relative mx-auto px-4 py-32 text-center">
