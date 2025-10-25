@@ -1,0 +1,66 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+model User {
+    id        String   @id @default(uuid())
+    email     String   @unique
+    name      String?
+    password  String
+    role      Role     @default(USER)
+    company   Company? @relation(fields: [companyId], references: [id])
+    companyId String?  @map("company_id")
+    createdAt DateTime @default(now()) @map("created_at")
+    updatedAt DateTime @updatedAt @map("updated_at")
+
+    @@map("users")
+}
+
+model Company {
+    id          String   @id @default(uuid())
+    name        String
+    description String?
+    logo        String?
+    location    String?
+    users       User[]
+    batches     Batch[]
+    createdAt   DateTime @default(now()) @map("created_at")
+    updatedAt   DateTime @updatedAt @map("updated_at")
+
+    @@map("companies")
+}
+
+model Batch {
+    id             String    @id @default(uuid())
+    batchNumber    String    @unique @map("batch_number")
+    productName    String    @map("product_name")
+    description    String?
+    quantity       Float
+    unit           String
+    origin         String?
+    productionDate DateTime  @map("production_date")
+    expiryDate     DateTime? @map("expiry_date")
+    story          String?   @db.Text
+    images         String[]
+    certifications String[]
+    ingredients    String[]
+    company        Company   @relation(fields: [companyId], references: [id])
+    companyId      String
+    createdAt      DateTime  @default(now()) @map("created_at")
+    updatedAt      DateTime  @updatedAt @map("updated_at")
+
+    @@map("batches")
+}
+
+enum Role {
+    USER
+    ADMIN
+}
